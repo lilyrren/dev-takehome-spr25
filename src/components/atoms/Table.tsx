@@ -50,13 +50,9 @@ export default function Table({ data, onStatusChange }: TableProps) {
     { id: "Rejected", label: "Rejected" }
   ];
 
-  const filteredData = data.filter(row => 
-    activeTab === "All" ? true : row.status === activeTab
-  );
-
   return (
     <div className="bg-white rounded-lg border">
-      {/* Header with Tabs */}
+      {/* tabs */}
       <div className="border-b border-gray-200">
         <div className="px-4 sm:px-6 flex gap-2 overflow-x-auto">
           {tabs.map((tab) => (
@@ -73,7 +69,7 @@ export default function Table({ data, onStatusChange }: TableProps) {
         </div>
       </div>
 
-      {/* Table */}
+      {/* table */}
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
@@ -96,7 +92,7 @@ export default function Table({ data, onStatusChange }: TableProps) {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {filteredData.map((row) => (
+            {data.map((row) => (
               <tr key={row.id}>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   {row.name}
@@ -104,13 +100,13 @@ export default function Table({ data, onStatusChange }: TableProps) {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   {row.item}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   {row.createdDate}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   {row.updatedDate || row.createdDate}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-30 py-25 w-full sm:m-1000">
                   <Dropdown
                     options={statusOptions}
                     selected={row.status}
