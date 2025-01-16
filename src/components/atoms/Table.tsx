@@ -17,11 +17,11 @@ interface TabProps {
   onClick: () => void;
 }
 
-const Tab: React.FC<TabProps> = ({ label, count, active, onClick }) => (
+const Tab = ({ label, count, active, onClick }: TabProps) => (
   <button
     onClick={onClick}
-    className={`px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-50 
-    ${active ? 'bg-blue-50 text-blue-600' : 'text-gray-600'}
+    className={`px-4 py-2 text-sm font-medium rounded-md hover:bg-blue-200
+    ${active ? 'bg-blue-600 text-gray-100' : 'text-black'}
     ${count !== undefined ? 'flex items-center gap-2' : ''}`}
   >
     {label}
