@@ -1,3 +1,5 @@
+import { Collection } from "@/app/admin/_components/collections";
+
 export default function Kewl() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-pink-300 text-white gap-5">
@@ -11,6 +13,9 @@ export default function Kewl() {
         Hello! My name is Lily. I would say that I am a collector. I love collecting Sonny Angels and Smiskis. Now, I am
         trying to get my hands on some labubu dolls 😆😆😆
       </p>
+      <div className="flex flex-col items-center justify-center w-full">
+        <Collection />
+      </div>
     </div>
   );
 }
